@@ -43,7 +43,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(UserDto userDto) {
-        // Assuming the ID is set in the DTO
         User user = convertToEntity(userDto);
         userRepo.save(user);
     }

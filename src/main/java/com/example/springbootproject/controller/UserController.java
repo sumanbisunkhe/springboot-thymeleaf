@@ -19,13 +19,13 @@ public class UserController {
     @GetMapping
     public String listUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
-        return "user/list"; // Matches src/main/resources/templates/user/list.html
+        return "user/list";
     }
 
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("user", new UserDto());
-        return "user/add"; // Matches src/main/resources/templates/user/add.html
+        return "user/add";
     }
 
     @PostMapping("/add")
@@ -38,12 +38,12 @@ public class UserController {
     public String showEditForm(@RequestParam("id") Long id, Model model) {
         UserDto userDto = userService.getUserById(id);
         model.addAttribute("user", userDto);
-        return "user/edit"; // Matches src/main/resources/templates/user/edit.html
+        return "user/edit";
     }
 
     @PostMapping("/edit")
     public String editUser(UserDto userDto) {
-        userService.updateUser(userDto); // Use updateUser instead of saveUser for updates
+        userService.updateUser(userDto);
         return "redirect:/users";
     }
 
