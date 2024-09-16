@@ -1,1 +1,3 @@
-# This repository consists a demo project using thymeleaf in Spring Boot.
+# Spring Boot - Thymeleaf
+
+## Learning Spring Boot framework ...
